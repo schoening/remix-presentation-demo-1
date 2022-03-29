@@ -8,7 +8,10 @@
     "build": "cross-env NODE_ENV=production remix build",
     "dev": "cross-env NODE_ENV=development remix dev",
     "postinstall": "remix setup node",
-    "start": "cross-env NODE_ENV=production remix-serve build"
+    "start": "cross-env NODE_ENV=production remix-serve build",
+    "php": "cd php && php -S localhost:5555",
+    "json-server": "cd json && json-server --watch db.json --port 9999",
+    "presentation": "concurrently \"npm run dev\" \"npm run php\" \"npm run json-server\""
   },
   "dependencies": {
     "@remix-run/react": "^1.2.3",
@@ -23,6 +26,7 @@
     "@remix-run/eslint-config": "^1.2.3",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "concurrently": "^7.0.0",
     "eslint": "^8.9.0",
     "typescript": "^4.5.5"
   },
