@@ -1,0 +1,8 @@
+export const ErrorBoundary = ({ error }) => {
+  console.log(error);
+  return (
+    <html>
+      <body>ERROR!!!</body>
+    </html>
+  );
+};
